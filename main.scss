@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600&display=swap");
+
+:root {
+  --primary-color: #5959e4;
+}
+body {
+  background: linear-gradient(to bottom right, #c8d8e7, #c6f0c6);
+  font-family: Josefin sans;
+  box-sizing: border-box;
+  margin: 0;
+}
+.navbar {
+  background-color: white;
+  padding: 1em;
+
+  .logo {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--primary-color);
+    cursor: pointer;
+    opacity: 100%;
+
+    span {
+      color: #222;
+    }
+  }
+
+  nav {
+    display: none;
+  }
+  .container {
+    display: flex;
+    place-content: space-between;
+  }
+
+  .mobile-menu {
+    cursor: pointer;
+    width: 30px;
+  }
+}
+
+nav.menu-btn {
+  display: block;
+}
+
+nav {
+  position: fixed;
+  z-index: 999;
+  background-color: #161616;
+  right: 0;
+  top: 0;
+  width: 150px;
+  height: 50%;
+  padding: 20px;
+  border-bottom-left-radius: 25px;
+  ul {
+    list-style: none;
+  }
+  ul.primary-nav {
+    margin-top: 2em;
+    margin-bottom: 0;
+  }
+  ul.secondary-nav {
+    margin-top: 0;
+  }
+  a {
+    color: #d8e2e4;
+    font-size: 1.4em;
+    text-decoration: none;
+    display: block;
+    padding: 7px 0;
+    text-align: right;
+
+    &:hover {
+      color: var(--primary-color);
+      font-weight: bolder;
+    }
+  }
+}
+.mobile-menu-exit {
+  float: right;
+  cursor: pointer;
+  width: 30px;
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-menu,
+  .mobile-menu-exit {
+    display: none;
+  }
+
+  .navbar .container {
+    display: grid;
+    grid-template-columns: 180px auto;
+    justify-content: unset;
+  }
+
+  .navbar nav {
+    display: flex;
+    justify-content: space-between;
+    background: none;
+    position: unset;
+    height: auto;
+    width: 100%;
+    padding: 0;
+
+    ul {
+      display: flex;
+    }
+
+    a {
+      color: black;
+      font-size: 1em;
+      padding: 0.1em 1em;
+
+      &:hover {
+        transition: all 0.3s ease 0s;
+        zoom: 1.3;
+        color: var(--primary-color);
+      }
+    }
+
+    ul.primary-nav {
+      align-items: center;
+      margin: 0;
+    }
+    ul.secondary-nav {
+      align-items: center;
+      margin: 0;
+    }
+    li.current a {
+      font-weight: bold;
+    }
+    li.button a {
+      color: #3a3a3a;
+      border: 1px #5ea3db;
+      background-color: #9bcccc;
+      font-weight: bold;
+      border-style: outset;
+      border-radius: 5em;
+      padding: 4px 10px;
+      padding-bottom: 1px;
+
+      &:hover {
+        transition: all 0.4s ease-in-out 0s;
+        background: #333333;
+        color: white;
+        border: 1px inset #96e98b;
+      }
+    }
+  }
+}
